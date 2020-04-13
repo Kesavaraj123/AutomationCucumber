@@ -4,24 +4,21 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.events.WebDriverEventListener;
 
 public class DressPage {
-	public WebDriver driver;
+	public static WebDriver driver;
 
 	@FindBy(xpath = "//*[@id=\"block_top_menu\"]/ul/li[1]/a")
 	private WebElement women;
 
-	@FindBy(xpath = "//*[@id=\"block_top_menu\"]/ul/li[1]/ul/li[2]/ul/li[1]/a")
+	@FindBy(xpath = "(//a[@title='Dresses'])[2]")
+	private WebElement dress;
+
+	@FindBy(xpath = "(//a[@title='Casual Dresses'])[2]")
 	private WebElement casual;
 
-	@FindBy(xpath = "//*[@id=\"center_column\"]/ul/li/div/div[1]/div/a[2]")
-	private WebElement evening;
-
-	/*
-	 * public DressPage(WebDriver driver2) {
-	 * 
-	 * }
-	 */
+	
 
 	public DressPage(WebDriver driver2) {
 		this.driver = driver2;
@@ -32,12 +29,12 @@ public class DressPage {
 		return women;
 	}
 
-	public WebElement getCasual() {
-		return casual;
+	public WebElement getDress() {
+		return dress;
 	}
 
-	public WebElement getEvening() {
-		return  evening;
+	public WebElement getCasual() {
+		return casual;
 	}
 
 }

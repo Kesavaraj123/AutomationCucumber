@@ -1,15 +1,27 @@
 Feature: automated Testing on automation practice application 
-
+Background:
+    Given user to Launch the browser
+    And user to login the application	
+ 
 Scenario: user to check the sign function 
 	Given user launch the automation practice application 
-	When user to click on sign in button 
+	When user to click on  sign in button 
 	Then user navigate to homepage of automation practice 
 	
-Scenario: user to check the login function using vaild username and password 
-	Given  user enter the valid username on username field 
-	When user enter the valid password on password field 
+
+
+@login	
+Scenario Outline: user to check the login function using vaild username and password 
+	Given  user enter the valid username "<username>" on username field 
+	When user enter the valid password "<password>" on password field 
 	And user click on submit button 
 	Then user validate the name of the user in homepage 
+	Examples:
+	|username|password|
+	|bahubali302@gmail.com|wenndeisel|
+	
+	
+	
 	
 Scenario: user to select dress to order 
 	Given user navigated to homepage 
@@ -35,11 +47,7 @@ Scenario: user to check for to  proceed summary
 	When   user to click on proceed summary button 
 	Then   user to navigate to signin page 
 	
-Scenario: user to check for  to  proceed  sigin 
 
-	Given  user to navigated to signin page 
-	When  user to click on proceed proceed to sigin button 
-	Then user to navigate to proceed to address page 
 	
 Scenario: user to check for  to proceed  address page 
 	Given user to navigated to proceed to address page 

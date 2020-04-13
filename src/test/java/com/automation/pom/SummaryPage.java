@@ -5,20 +5,19 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class ProceedOne {
-	public  static  WebDriver driver;
+public class SummaryPage {
+	public static WebDriver driver;
+	@FindBy(xpath = "//*[@id=\"center_column\"]/p[2]/a[1]")
+	private WebElement summary;
 
-	@FindBy(xpath = "//*[@id=\"layer_cart\"]/div[1]/div[2]/div[4]/a")
-	private WebElement proceedone;
-
-	public ProceedOne(WebDriver driver2) {
+	public SummaryPage(WebDriver driver2) {
 		this.driver = driver2;
 		PageFactory.initElements(driver, this);
 		
 	}
 
-	public WebElement getProceedone() {
-		return proceedone;
+	public WebElement getSummary() {
+		return summary;
 	}
 
 }
